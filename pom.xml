@@ -14,7 +14,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java-version-compliance>1.7</java-version-compliance>
+		<java-version-compliance>1.8</java-version-compliance>
 		<j2ee-version-compliance>6.0</j2ee-version-compliance>
 	    <maven.compiler.source>${java-version-compliance}</maven.compiler.source>
 	    <maven.compiler.target>${java-version-compliance}</maven.compiler.target>
@@ -101,13 +101,7 @@
 				<artifactId>fj-core</artifactId>
 				<version>${fj-version}</version>
 			</dependency>
-			
-			<dependency>
-			    <groupId>commons-codec</groupId>
-			    <artifactId>commons-codec</artifactId>
-			    <version>1.13</version>
-			</dependency>				
-			
+
 			<dependency>
 				<groupId>org.fugerit.java</groupId>
 				<artifactId>fj-doc-base</artifactId>
