@@ -45,6 +45,8 @@ public class DocBase extends DocElement {
 	 */
 	private static final long serialVersionUID = 8002627421125892032L;
 
+	public static final String TAG_NAME = "doc";
+	
 	private static void print( DocContainer docContainer, PrintStream s, int pad ) {
 		String p = "";
 		for ( int k=0; k<pad; k++ ) {
@@ -105,6 +107,7 @@ public class DocBase extends DocElement {
 	}
 
 	public void setId( String id, DocElement element ) {
+		element.setId( id );
 		this.idMap.put( id , element );
 	}
 	

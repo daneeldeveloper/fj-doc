@@ -1,4 +1,287 @@
-﻿0.5.6 (2022-12-05)
+﻿1.5.0-rc.2 (2023-08-17)
+------------------
++ [documentation][fj-doc-base]Added documentation to the doc-2-0.xsd [1.5.0-rc.2]
++ [enhancement][fj-doc-mod-fop] optimization in style rendering for FO/PDF Type Handler [1.5.0-rc.2]
++ [enhancement][fj-doc-mod-fop] added support for table 'padding' and 'spacing' (convert to fo cell padding and margin) [1.5.0-rc.2]
++ [enhancement][fj-doc-freemarker] added support for table 'padding' and 'spacing' (convert to html cell padding and margin) [1.5.0-rc.2]
++ [enhancement][fj-doc-base] Added generic meta information 'default-table-spacing' and 'default-table-padding' [1.5.0-rc.2]
++ [enhancement][fj-doc-playground-quarkus] updated quarkus version to 3.2.4.Final [1.5.0-rc.2]
++ [enhancement][fj-doc-base] Added generic meta information 'default-cell-border-width' [1.5.0-rc.1]
++ [enhancement][fj-doc-freemarker] optimization in style rendering for HTML Type Handler [1.5.0-rc.1]
++ [fix][fj-doc-freemarker] fixed multiple parents loading for FreemarkerDocProcessConfig [1.4.6-rc.2]
++ [documentation][fj-doc-lib-autodoc]Some fix in meta info generation [1.4.6-rc.1]
++ [documentation][fj-doc-lib-autodoc]Added anchor to specific meta info [1.4.6-rc.1]
++ [documentation][fj-doc-base]Improved javadoc [1.4.6-rc.1]
++ [enhancement][fj-doc-freemarker] added compatibility process() + validation method to FreemarkerDocProcessConfig [1.4.6-rc.1]
+
+1.4.5 (2023-08-15)
+------------------
++ [fj-doc-lib-autodoc]Added new chain for meta informations processing
++ [fj-doc-lib-autodoc]Autodoc detail namespace changed from http://autodoc.fugerit.org to https://autodoc.fugerit.org
+
+1.4.5-rc.2 (2023-08-13)
+------------------
++ Added documentation to [fj-doc-lib-autodoc]
++ Added sample xml as helper for writing autodoc detail
++ [fj-doc-freemarker] added support for html-css-style and html-css-link meta info
++ Added meta informations documentation
+
+1.4.5-rc.1 (2023-08-13)
+------------------
++ [fj-doc-mod-fop] added cell vertical alignment handling
++ [fj-doc-mod-fop] added cell rowspan handling
++ Updated fj-core version to 8.0.13
++ Updated fj-doc-mod-openpdf version to 0.1.0
++ Added module fj-doc-bom (dependency management for incubator and deprecated projects is here now, fj-mod-doc-openpdf, fj-mod-doc-pdfbox etc)
+
+1.4.4-rc.001 (2023-08-10)
+------------------
++ [fj-doc-lib-simpletable] Fix on simple table special characters
++ [fj-doc-lib-simpletable] Fix DocTypeHandlerXML rendering for simple table
+
+1.4.3-rc.001 (2023-08-02)
+------------------
++ Updated freemarker version to 2.3.32
+
+1.4.2-rc.002 (2023-08-01)
+------------------
++ Updated fj-core version to 8.0.13-rc.001
+
+1.4.1-rc.002 (2023-07-31)
+------------------
++ Updated fj-core version to 8.0.12-rc.001
+
+1.4.1-rc.001 (2023-07-30)
+------------------
++ Add more unit test for PDF/A format
++ Handler registration allowed by id (freemarker-doc-process-1-0.xsd updated)
++ Added some Useful resources on Apache FOP
++ Fix to version import
++ Added sample for ${pageCount}
+
+1.4.0-rc.002 (2023-07-29)
+------------------
++ Added PDFA output format in playground 
++ fj-doc-mod-fop fix to pdf-a metadata, changed structure of title and creator tag
+
+1.4.0-rc.001 (2023-07-29)
+------------------
++ [Added native support for GraalVM in core modules (fj-doc-base and fj-doc-freemarker)](https://github.com/fugerit-org/fj-doc/issues/39)
++ [[fj-doc-mod-fop] support for last page constant ${pageCount}](https://github.com/fugerit-org/fj-doc/issues/47)
++ Added documentation for native support status
++ Added "since" in readme of most modules 
+
+1.3.2-rc.001 (2023-07-20)
+------------------
++ [New module fj-doc-mod-poi5 based on Apache Poi 5+ (java 11+ needed)](https://github.com/fugerit-org/fj-doc/issues/45)
+
+1.3.1-rc.006 (2023-07-20)
+------------------
++ Autodoc configuration review
++ AutodocDocConfig converted to new configuration model
+
+1.3.1-rc.004 (2023-07-19)
+------------------
++ Fix chain parent handling
++ Fix xsd for attribute mapping of complex
+
+1.3.1-rc.003 (2023-07-18)
+------------------
++ Freemarker html type handler converted to new configuration model
++ Configuration stub for freemarker configuration model
++ Tool for stub generation and conversion from old model (new maven module fj-doc-tool)
+
+1.3.1-rc.002 (2023-07-13)
+------------------
++ Updated fj-core version to 8.0.11-rc.002
++ Simplified FreemarkerDocProcessConfig
+
+1.3.1-rc.001 (2023-07-13)
+------------------
++ [[fj-doc-mod-fop] add pdf/a support](https://github.com/fugerit-org/fj-doc/issues/43)
+
+1.3.0-rc.007 (2023-07-12)
+------------------
++ [New freemarker configuration model, compatibility mode](https://github.com/fugerit-org/fj-doc/issues/38)
+
+1.3.0-rc.004 (2023-07-11)
+------------------
++ fj-bom updated to 1.2.3
+
+1.3.0-rc.001 (2023-07-09)
+------------------
++ [New freemarker configuration model](https://github.com/fugerit-org/fj-doc/issues/38)
+
+1.2.0-rc.001 (2023-07-07)
+------------------
++ Added module fj-doc-lib-simpletable-import to convert xlsx or csv to simple table 
+
+1.1.2-rc.001 (2023-07-03)
+------------------
++ Updated quarkus version to 3.1.3.Final
++ Added generation time on playgroud quarkus
++ Added lombok dependency
++ Added API for AOT type handlers initialization (especially useful for libraries like apache fop) 
+
+1.1.1-rc.001 (2023-07-02)
+------------------
++ Added fj-doc bom dependencies for incubator and deprecated modules (fj-doc-ent, fj-doc-mod-pdfbox, fj-doc-mod-itext, fj-doc-mod-jxl)
++ Fix page number handling on footer / header of fj-doc-mod-fop,[[fj-doc-mod-fop] inccorect handling of &](https://github.com/fugerit-org/fj-bom/issues/35)
+
+1.1.0-rc.001 (2023-06-25)
+------------------
++ Added bom to make importing core libraries easier (fj-doc-bom-core)
++ Added bom to make importing fop pdf libraries easier (fj-doc-bom-pdf)
+
+1.0.3-rc.002 (2023-06-15)
+------------------
++ Upgrade quarkus version to 3.1.1.Final (Apache Maven 3.8.2+ needed to build)
+
+1.0.3-rc.001 (2023-06-08)
+------------------
++ [[fj-doc-mod-fop] inccorect handling of &](https://github.com/fugerit-org/fj-bom/issues/35)
++ update fj-bom version 1.1.0
++ update fj-core version 8.0.10-rc.003
+
+1.0.2-rc.001 (2023-04-05)
+------------------
++ Upgrade playground to quarkus 3.0.0.CR1
+
+1.0.1 (2023-03-26)
+------------------
++ update fj-bom version 1.0.0
++ update fj-core version 8.0.4
++ maven.compiler.release property set to '8' (so the project is still compatible with java8+) [except for quarkus playground]
++ [As for the new parent version, building should be done using java11+](https://github.com/fugerit-org/fj-bom/issues/11)
+
+1.0.0 (2023-03-18)
+------------------
++ [Moving github pages to main branch, dropping 0 version](https://github.com/fugerit-org/fj-doc/issues/33)
++ update fj-core version 8.0.0
+
+0.8.11 (2023-02-26)
+------------------
++ Fixed column helper for SimpleTable
+
+0.8.10 (2023-02-26)
+------------------
++ [Managing of unsafe DocTypeHandler for DocHandlerFactory](https://github.com/fugerit-org/fj-doc/issues/31)
++ update fj-core version to 0.8.13 (DocHandlerFactory would not work with previous versions)
+
+0.8.9 (2023-02-20)
+------------------
++ [Upgraded quarkus version to 3.0.0.Alpha4](https://github.com/fugerit-org/fj-doc/issues/29)
++ Fix charset handling for csv type handler
++ Fix to alternate text for json and yaml sample
+
+0.8.8 (2023-02-11)
+------------------
++ [Fix javadoc build for java 17](https://github.com/fugerit-org/fj-doc/issues/26)
++ [Jackson core need to be upgraded 2.14.1](https://github.com/fugerit-org/fj-doc/issues/9)
++ update fj-core version to 0.8.12
+
+0.8.7 (2023-02-08)
+------------------
++ [Fix Javadoc generations with older versions of jdk 11 fails](https://github.com/fugerit-org/fj-doc/issues/24)
+
+0.8.6 (2023-02-06)
+------------------
++ Added meta informations to samples documents
++ Added new sample catalog entry from playground
++ Playground tests disabled by default
++ Playground not included in release
+
+0.8.5 (2023-01-31)
+------------------
++ [fj-doc-base - Extend charset provider capabilities](https://github.com/fugerit-org/fj-doc/issues/22)
+
+0.8.4 (2023-01-27)
+------------------
++ [fj-doc-base - Enable charset selection for DocTypeHandlerXML](https://github.com/fugerit-org/fj-doc/issues/17)
+
+0.8.3 (2023-01-24)
+------------------
++ [fj-doc-mod-fop - need to create FopConfigClassLoaderWrapper with default ResourceResolver](https://github.com/fugerit-org/fj-doc/issues/15)
+
+0.8.2 (2023-01-22)
+------------------
++ Updated fj-core version to 0.8.8
++ Improved playground
+
+0.8.1 (2023-01-15)
+------------------
++ Added methods to DocProcessContext for DocBase and DocType availability.
++ Added access to DocConfig static variables in Freemarker Chain process
++ Added new info doc-version-compatibility for handling behaviours in 1-x e 2-x doc versions. 
++ Added a sample documents catalog to the fj-doc-sample modules (accessible in the playgound application too)
+
+0.8.0 (2023-01-07)
+------------------
++ Added a new module for generating documentation [fj-doc-lib-autodoc](https://github.com/fugerit-org/fj-doc/tree/main/fj-doc-lib-autodoc)
++ Published new version of [doc-2-0.xsd](https://venusdocs.fugerit.org/fj-doc-base/src/main/resources/config/doc-2-0.xsd), [see doc xsd changelog](https://github.com/fugerit-org/fj-doc/blob/main/fj-doc-base/DocXsdChangelog.md)
++ Created a brand new [xsd reference documentation](https://venusdocs.fugerit.org/fj-doc-base/src/main/docs/doc_xsd_config_ref.html)
+
+0.7.2 (2023-01-04)
+------------------
++ Fixed xml validation in DocXmlParser
++ Added validation in DocJsonParser and DocYamlParser (though conversion to XML)
++ The xml parsing is no namespace aware (experimental)
++ More functionalities in playground
+
+0.7.1 (2023-01-02)
+------------------
++ Added conversion utility from json/yaml to xml
++ Added xml to [json/yaml conversion conventions](https://github.com/fugerit-org/fj-doc/tree/main/fj-doc-base-json/xml_conversion.md)
++ More functionalities in playground
++ Upgrade playground to quarkus 3.0.0.Alpha2
+
+0.7.0 (2022-12-29)
+------------------
++ Added module for using json a document generator [fj-doc-base-json](https://github.com/fugerit-org/fj-doc/tree/main/fj-doc-base-json) (based on jackson)
++ Added module for using yaml a document generator [fj-doc-base-yaml](https://github.com/fugerit-org/fj-doc/tree/main/fj-doc-base-yaml) (based on jackson)
++ Added playground module [fj-doc-playground-quarkus](https://github.com/fugerit-org/fj-doc/tree/main/fj-doc-playground-quarkus) (based on quarkus)
++ Better pdf validation handling
++ Updated fj-core version to 0.8.6
+
+﻿0.6.2 (2022-12-23)
+------------------
++ The fj-doc-val has been split in modules, to optimize dependencies 
+
+﻿0.6.1 (2022-12-22)
+------------------
++ Added doc(x) and xls(x) validators
++ Corrected type in package name
+
+﻿0.6.0 (2022-12-20)
+------------------
++ Added compatibility check for Tiff Image Validator (required java 9+ at runtime)
++ Now fj-doc requires java9+ at build time (will be build with java 11), java8 at runtime (some functionalities will not works)
++ Updated fj-core version to 0.8.5
+
+0.5.11 (2022-12-19)
+------------------
++ Added doc type validation module (fj-doc-val)
++ Now fj-doc requires java9+ at build time (will be build with java 11), java8 at runtime (some functionalities will not works)
+
+0.5.10 (2022-12-12)
+------------------
++ Added support for maximum table width and doc language in simpletable module
+
+0.5.9 (2022-12-11)
+------------------
++ Added support for style and align in simpletable module
+
+0.5.8 (2022-12-10)
+------------------
++ Added support for border width in simpletable module
+
+0.5.7 (2022-12-09)
+------------------
++ Updated fj-core version to 0.8.4
++ Updated fj-bom version to 0.2.3
++ Added facade for creating new SimpleTable
+
+0.5.6 (2022-12-05)
 ------------------
 + Changed base path of freemarker config to avoid conflict
 + Changed base path of mod fop config to avoid conflict

@@ -41,7 +41,7 @@ public class DocElement implements Serializable {
 	private static final long serialVersionUID = 1934678965894426319L;
 
 	public String toString() {
-		return this.getClass().getName();
+		return this.getClass().getName()+"[id:"+this.getId()+"]";
 	}
 	
 	public static final int ELEMENT_TYPE_TABLE = 1;
@@ -51,6 +51,12 @@ public class DocElement implements Serializable {
 	public static final int ELEMENT_TYPE_TABLECELL = 3;
 	
 	public static final int ELEMENT_TYPE_PARAGRAPH = 4;
+	
+	public static final String STRING_1 = "1";
+	
+	public static final String STRING_0 = "0";
+	
+	public static final String UNSET = "-1";
 	
 	private String id;
 

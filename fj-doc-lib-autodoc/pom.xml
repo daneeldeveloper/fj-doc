@@ -1,0 +1,146 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>fj-doc-lib-autodoc</artifactId>
+
+	<parent>
+		<groupId>org.fugerit.java</groupId>
+		<artifactId>fj-doc</artifactId>
+		<version>1.5.0-rc.2</version>
+	</parent>
+
+	<name>fj-doc-lib-autodoc</name>
+	<description>API for generating documentation for Venus Project</description>
+
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	
+	<properties>
+		<xsd-parser-version>1.2.4</xsd-parser-version>
+		<autodoc-detail-package-name>org.fugerit.java.doc.lib.autodoc.detail.model</autodoc-detail-package-name>
+		<autodoc-meta-package-name>org.fugerit.java.doc.lib.autodoc.meta.model</autodoc-meta-package-name>
+	</properties>
+	
+	<build>
+		
+		<plugins>
+		
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jaxb2-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>xjc-autodoc-main</id>
+						<goals>
+							<goal>xjc</goal>
+						</goals>
+						<configuration>
+							<packageName>${autodoc-detail-package-name}</packageName>
+							<outputDirectory>${project.build.directory}/generated-sources/jaxb-ad</outputDirectory>
+							<sources>
+		                    	<source>src/main/resources/xsd/autodoc-detail-1-0.xsd</source>
+		                	</sources>
+						</configuration>
+					</execution>
+					<execution>
+						<id>xjc-autodoc-metan</id>
+						<goals>
+							<goal>xjc</goal>
+						</goals>
+						<configuration>
+							<packageName>${autodoc-meta-package-name}</packageName>
+							<outputDirectory>${project.build.directory}/generated-sources/jaxb-am</outputDirectory>
+							<sources>
+		                    	<source>src/main/resources/xsd/autodoc-meta-1-0.xsd</source>
+		                	</sources>
+						</configuration>
+					</execution>					
+				</executions>
+			</plugin>
+		
+		</plugins>
+				
+	</build>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.fugerit.java</groupId>
+			<artifactId>fj-core</artifactId>
+		</dependency>	
+	
+		<dependency>
+			<groupId>org.fugerit.java</groupId>
+			<artifactId>fj-doc-base</artifactId>
+		</dependency>		
+
+		<dependency>
+			<groupId>org.fugerit.java</groupId>
+			<artifactId>fj-doc-freemarker</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.fugerit.java</groupId>
+			<artifactId>fj-doc-lib-simpletable</artifactId>
+		</dependency>
+
+		<dependency>
+		    <groupId>com.github.xmlet</groupId>
+		    <artifactId>xsdParser</artifactId>
+		    <version>${xsd-parser-version}</version>
+		</dependency>
+
+		<dependency>
+		  <groupId>jakarta.xml.bind</groupId>
+		  <artifactId>jakarta.xml.bind-api</artifactId>
+		</dependency>
+		<dependency>
+		  <groupId>com.sun.xml.bind</groupId>
+		  <artifactId>jaxb-impl</artifactId>
+		  <scope>runtime</scope>
+		</dependency>
+
+	</dependencies>
+
+	<organization>
+		<url>https://www.fugerit.org</url>
+		<name>Fugerit</name>
+	</organization>
+	
+	<url>https://www.fugerit.org/perm/venus/</url>
+	
+	<profiles>
+	
+		<profile>
+			<id>full</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<configuration>
+							<stylesheetfile>src/main/javadoc/stylesheet.css</stylesheetfile>
+							<excludePackageNames>${autodoc-detail-package-name},${autodoc-meta-package-name}</excludePackageNames>
+						</configuration>
+						<executions>
+							<execution>
+								<id>attach-javadocs</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>			
+				</plugins>
+			</build>
+		</profile>
+	
+	</profiles>
+	
+</project>

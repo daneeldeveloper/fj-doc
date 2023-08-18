@@ -2,7 +2,7 @@
 <doc
 	xmlns="http://javacoredoc.fugerit.org"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://javacoredoc.fugerit.org https://www.fugerit.org/data/java/doc/xsd/doc-1-1.xsd" > 
+    xsi:schemaLocation="http://javacoredoc.fugerit.org https://www.fugerit.org/data/java/doc/xsd/doc-2-0.xsd" > 
 
   <!-- 
   	Sample Apache FreeMarker template for Fugerit Doc.
@@ -12,9 +12,12 @@
 
   <meta>
 	<info name="excel-table-id">excel-table=print</info>
-	<!-- 
-	<info name="excel-width-multiplier">450</info>
-	 -->
+ 	<!-- documenta meta information -->
+	<info name="doc-title">Basic example for freemarker 02</info>
+	<info name="doc-subject">fj doc venus sample source xml</info>
+	<info name="doc-author">fugerit79</info>
+	<info name="doc-language">en</info>
+	<!-- xlsx / xls properties -->
 	<info name="excel-try-autoresize">true</info> 
   </meta>
  
@@ -35,7 +38,7 @@
 				<#include "/include/test_01_row.ftl">
 			</#list>  
     		<row>
-    			<cell align="center" colspan="2" rowspan="2"><para style="bold">Total</para></cell>
+    			<cell align="center" valign="middle" colspan="2" rowspan="2"><para style="bold">Total</para></cell>
     			<cell align="center"><para style="bold">#</para></cell>
     		</row>
     		<row>

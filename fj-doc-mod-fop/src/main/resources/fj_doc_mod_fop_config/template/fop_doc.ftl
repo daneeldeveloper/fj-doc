@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<#import "/macro/doc_element.ftl" as doc_element>
+<#assign comp=docBase.stableInfo['doc-version-compatibility']!'2-x' ><#if (comp = '1-x') ><!-- 1 --><#import "/macro/doc_element_1-x.ftl" as doc_element><#else><!-- 2 --><#import "/macro/doc_element.ftl" as doc_element></#if>
 <#import "/macro/doc_info.ftl" as doc_info>
 <#assign docInfo=docBase.info/>
 <fo:root <#if (docBase.infoDocLanguage)??>xml:lang="${docBase.infoDocLanguage}"</#if>
@@ -41,8 +41,8 @@
 		    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 		      <rdf:Description rdf:about=""
 		          xmlns:dc="http://purl.org/dc/elements/1.1/">
-		        <#if (docBase.infoDocTitle)??><dc:title>${docBase.infoDocTitle}</dc:title></#if>
-		        <#if (docBase.infoDocAuthor)??><dc:creator>${docBase.infoDocAuthor}</dc:creator></#if>
+		        <#if (docBase.infoDocTitle)??><dc:title><rdf:Alt><rdf:li xml:lang="x-default">${docBase.infoDocTitle}</rdf:li></rdf:Alt></dc:title></#if>
+		        <#if (docBase.infoDocAuthor)??><dc:creator><rdf:Seq><rdf:li>${docBase.infoDocAuthor}</rdf:li></rdf:Seq></dc:creator></#if>
 		        <#if (docBase.infoDocSubject)??><dc:description>${docBase.infoDocSubject}</dc:description></#if>
 		        <#if (docBase.infoDocLanguage)??><dc:language><rdf:Bag><rdf:li>${docBase.infoDocLanguage}</rdf:li></rdf:Bag></dc:language></#if>
 		      </rdf:Description>
@@ -90,6 +90,6 @@
 			<fo:block>
 				<@doc_element.handleElementList elements=docBase.docBody.elementList/>	
 			</fo:block>	
-		</fo:flow>
+		<fo:block id="EndOfDocument"></fo:block></fo:flow>
 	</fo:page-sequence>
 </fo:root>

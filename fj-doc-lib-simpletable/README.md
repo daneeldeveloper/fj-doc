@@ -10,7 +10,12 @@ This is the first of a series of bundled libraries using fj-doc framework for sp
 *Status* :  
 All basic features are implemented.  
   
+*Since* : fj-doc 0.6
   
+*Native support*  :  
+Disabled, native support will be added in a future release.
+  
+ 
 *Quickstart* :
 This module is already configured, and can be called just creating the model of the table to be rendered and providing a TypeHandler.
 
@@ -20,7 +25,7 @@ This module is already configured, and can be called just creating the model of 
 		DocTypeHandler handler = ...
 
 		// the table model
-		SimpleTable simpleTableModel = new SimpleTable( "30;30;40" );
+		SimpleTable simpleTableModel = SimpleTableFacade.newTable( 30, 30, 40 );
 		SimpleRow headerRow = new SimpleRow( BooleanUtils.BOOLEAN_TRUE );
 		headerRow.addCell( "Name" );
 		headerRow.addCell( "Surname" );

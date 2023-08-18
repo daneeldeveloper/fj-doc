@@ -2,7 +2,7 @@
 <doc
 	xmlns="http://javacoredoc.fugerit.org"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://javacoredoc.fugerit.org https://www.fugerit.org/data/java/doc/xsd/doc-1-1.xsd" > 
+    xsi:schemaLocation="http://javacoredoc.fugerit.org https://www.fugerit.org/data/java/doc/xsd/doc-2-0.xsd" > 
 
   <!-- 
   	Sample Apache FreeMarker template for Fugerit Doc.
@@ -22,8 +22,8 @@
 	<info name="csv-table-id">excel-table</info> 
 	
 	<!-- you need to escape free marker expression for currentPage --> 
-	<footer-ext numbered="true" align="right">
-		<para>${r"${currentPage}"}</para>
+	<footer-ext>
+		<para align="right">${r"${currentPage}"} / ${r"${pageCount}"}</para>
 	</footer-ext>
 	 
   </meta>
